@@ -11,6 +11,7 @@ struct S_datosnumA
 
 
 void f_aleatorio(S_datosnumA aleatorio);
+void mostrarHistograma(int numeros[],S_datosnumA aleatorio);
 void f_histograga(S_datosnumA histograma);
 
 int main() 
@@ -41,4 +42,22 @@ void f_aleatorio(S_datosnumA aleatorio)
      cout<<mayor;
   }
 //return datos;
+}
+void mostrarHistograma(int numeros[],S_datosnumA aleatorio) 
+{
+    int frecuencia[21] = {0};  // Inicializar el arreglo de frecuencias en cero
+    for (int i = 0; i < 15; i++)
+    {
+      frecuencia[numeros[i]]++;  // Incrementar la frecuencia del número correspondiente
+    }
+    cout << "Histograma: "<<endl;
+    
+    for (int i = 0; i < 25; i++) {
+        cout << i << ": ";
+        
+        for (int j = 0; j < frecuencia[i]; j++) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
 }
